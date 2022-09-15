@@ -1,4 +1,3 @@
-EN:                     open_wnd(c
+EN: pyperclip
 
-
-PL: open_wnd(c
+PL: spinacz

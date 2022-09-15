@@ -1,11 +1,9 @@
-import http.client
+# import http.client
 import keyboard
 import pyperclip
 import pyautogui as pya
 import time
 from googletrans import Translator
-from kivy.app import App
-from kivy.uix.label import Label
 
 
 def have_internet():
@@ -38,26 +36,14 @@ def translate():
     file.write("\n" + "PL: " + strTransVar)
 
 
-def display(file_path):
+# if have_internet():
+while True:
     try:
-        with open(f"{file_path}") as w:
-            f = w.read()
-        return str(f)
+        if keyboard.is_pressed('ctrl'):
+            if keyboard.is_pressed('c'):
+                translate()
     except:
-        return "Not found, Sorry, the user has no data entered yet."
+        pass
 
 
-def open_wnd():
-    return Label(text=display('test.txt'), color="#DADADA")
-def close_wnd():
-    return quit(Label)
 
-
-if have_internet():
-    while True:
-        try:
-            if keyboard.is_pressed('ctrl'):
-                if keyboard.is_pressed('c'):
-                    translate()
-        except:
-            pass

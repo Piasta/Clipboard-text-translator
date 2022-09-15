@@ -1,6 +1,10 @@
 from kivy.app import App
 from kivy.uix.label import Label
+from kivy.config import Config
 import keyboard
+from kivy.core.window import Window
+
+Config.set('graphics', 'window_state', 'hidden')
 
 
 def get_text(file_path):
@@ -14,12 +18,8 @@ def get_text(file_path):
 
 class MyApp(App):
     def build(self):
-        return Label(text=get_text('test.txt'), color="#DADADA")
-
-    def kill(self):
-        return Label(quit())
+        # Window.bordeless = 'True'
+        return Label(text=display('test.txt'), color="#DADADA")
 
 
-if keyboard.is_pressed('ctrl'):
-    MyApp().run()
-    # MyApp().kill()
+MyApp().run()
